@@ -8,12 +8,12 @@
 
 </Property>
 	<Item Name="Instrument" Type="Folder">
-		<Item Name="Instrument Level Controls.lvlib" Type="Library" URL="../Instrument Level Controls/Instrument Level Controls.lvlib"/>
-		<Item Name="Instrument Level Processing.lvlib" Type="Library" URL="../Instrument Level Processing/Instrument Level Processing.lvlib"/>
-		<Item Name="MIDI Controls.lvlib" Type="Library" URL="../MIDI Controls/MIDI Controls.lvlib"/>
-		<Item Name="Signal Generation.lvlib" Type="Library" URL="../Signal Generation/Signal Generation.lvlib"/>
-		<Item Name="Voice Level Controls.lvlib" Type="Library" URL="../Voice Level Controls/Voice Level Controls.lvlib"/>
-		<Item Name="Voice Level Processing.lvlib" Type="Library" URL="../Voice Level Processing/Voice Level Processing.lvlib"/>
+		<Item Name="Instrument Level Controls.lvlib" Type="Library" URL="../old/Instrument Level Controls/Instrument Level Controls.lvlib"/>
+		<Item Name="Instrument Level Processing.lvlib" Type="Library" URL="../old/Instrument Level Processing/Instrument Level Processing.lvlib"/>
+		<Item Name="MIDI Controls.lvlib" Type="Library" URL="../old/MIDI Controls/MIDI Controls.lvlib"/>
+		<Item Name="Signal Generation.lvlib" Type="Library" URL="../old/Signal Generation/Signal Generation.lvlib"/>
+		<Item Name="Voice Level Controls.lvlib" Type="Library" URL="../old/Voice Level Controls/Voice Level Controls.lvlib"/>
+		<Item Name="Voice Level Processing.lvlib" Type="Library" URL="../old/Voice Level Processing/Voice Level Processing.lvlib"/>
 	</Item>
 	<Item Name="Apply Effects.vi" Type="VI" URL="../Apply Effects.vi"/>
 	<Item Name="Get Wave.vi" Type="VI" URL="../Get Wave.vi"/>
