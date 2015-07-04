@@ -2057,6 +2057,7 @@ AddOutputFilter chunkFilter
 		</Item>
 		<Item Name="RT Main.vi" Type="VI" URL="../RT Main.vi"/>
 		<Item Name="Four Track - Main.vi" Type="VI" URL="../Controls/Four Track - Main.vi"/>
+		<Item Name="test.vi" Type="VI" URL="../test.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="AudioOut Block Configuration.ctl" Type="VI" URL="/&lt;vilib&gt;/myRIO/Common/Instrument Driver Framework/myRIO v1.0/AudioOut Block/typedefs/AudioOut Block Configuration.ctl"/>
