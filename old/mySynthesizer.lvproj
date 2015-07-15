@@ -43,6 +43,8 @@
 			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Instrument Level Processing.ctl" Type="VI" URL="../old/Instrument Level Processing/Instrument Level Processing.ctl"/>
+			<Item Name="MIDI Controls.ctl" Type="VI" URL="../old/MIDI Controls/MIDI Controls.ctl"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
