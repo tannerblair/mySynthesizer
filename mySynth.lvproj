@@ -30,8 +30,8 @@
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
-	<Item Name="myRIO-1900" Type="RT myRIO">
-		<Property Name="alias.name" Type="Str">myRIO-1900</Property>
+	<Item Name="mySynth" Type="RT myRIO">
+		<Property Name="alias.name" Type="Str">mySynth</Property>
 		<Property Name="alias.value" Type="Str">172.22.11.2</Property>
 		<Property Name="CCSymbols" Type="Str">TARGET_TYPE,RT;OS,Linux;CPU,ARM;DeviceCode,762F;FPGAPersonality,myRIO_FP_Custom;</Property>
 		<Property Name="crio.ControllerPID" Type="Str">762F</Property>
@@ -56,7 +56,7 @@
 		<Property Name="target.IsRemotePanelSupported" Type="Bool">true</Property>
 		<Property Name="target.RTCPULoadMonitoringEnabled" Type="Bool">true</Property>
 		<Property Name="target.RTDebugWebServerHTTPPort" Type="Int">8001</Property>
-		<Property Name="target.RTTarget.ApplicationPath" Type="Path">/c/ni-rt/startup/startup.rtexe</Property>
+		<Property Name="target.RTTarget.ApplicationPath" Type="Path">/home/lvuser/natinst/bin/startup.rtexe</Property>
 		<Property Name="target.RTTarget.EnableFileSharing" Type="Bool">true</Property>
 		<Property Name="target.RTTarget.IPAccess" Type="Str">+*</Property>
 		<Property Name="target.RTTarget.LaunchAppAtBoot" Type="Bool">false</Property>
@@ -509,7 +509,7 @@ AddOutputFilter chunkFilter
 						<Property Name="SupportDownload" Type="Bool">true</Property>
 						<Property Name="SupportResourceEstimation" Type="Bool">false</Property>
 						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref">/myRIO-1900/Chassis/FPGA Target/FPGA Main.vi</Property>
+						<Property Name="TopLevelVI" Type="Ref">/mySynth/Chassis/FPGA Target/FPGA Main.vi</Property>
 					</Item>
 					<Item Name="LV FPGA Serial Read Write" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
 						<Property Name="AllowEnableRemoval" Type="Bool">false</Property>
@@ -545,13 +545,15 @@ AddOutputFilter chunkFilter
 						<Property Name="SupportDownload" Type="Bool">true</Property>
 						<Property Name="SupportResourceEstimation" Type="Bool">false</Property>
 						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref">/myRIO-1900/Chassis/FPGA Target/LV FPGA Serial Read Write.vi</Property>
+						<Property Name="TopLevelVI" Type="Ref">/mySynth/Chassis/FPGA Target/LV FPGA Serial Read Write.vi</Property>
 					</Item>
 				</Item>
 			</Item>
 		</Item>
 		<Item Name="Application Data.vi" Type="VI" URL="../Controls/Application Data.vi"/>
 		<Item Name="web" Type="Web Service">
+			<Property Name="Bld_buildSpecName" Type="Str"></Property>
+			<Property Name="Bld_version.build" Type="Int">3</Property>
 			<Property Name="ws.autoIncrementVersion" Type="Bool">true</Property>
 			<Property Name="ws.disconnectInline" Type="Bool">true</Property>
 			<Property Name="ws.disconnectTypeDefs" Type="Bool">false</Property>
@@ -586,6 +588,14 @@ AddOutputFilter chunkFilter
 					<Property Name="ws.uri" Type="Str"></Property>
 					<Property Name="ws.useHeaders" Type="Bool">true</Property>
 					<Property Name="ws.useStandardURL" Type="Bool">true</Property>
+				</Item>
+				<Item Name="saveFile.vi" Type="VI" URL="../Sub VIs/Web/Web Methods/saveFile.vi">
+					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.type" Type="Int">1</Property>
+				</Item>
+				<Item Name="loadFile.vi" Type="VI" URL="../Sub VIs/Web/Web Methods/loadFile.vi">
+					<Property Name="ws.method" Type="Int">1</Property>
+					<Property Name="ws.type" Type="Int">1</Property>
 				</Item>
 			</Item>
 			<Item Name="Startup VIs" Type="Startup VIs Container"/>
