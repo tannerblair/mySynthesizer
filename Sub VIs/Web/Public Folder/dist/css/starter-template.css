@@ -24,3 +24,20 @@ body {
 .font-text {
     font-family: :'Anton', Arial, sans-serif; font-weight: 400;
 }
+
+.textlist {
+    text-align: left;
+    font-style: oblique;
+    font-family:sans-serif;
+}
+
+.text-subheader {
+    font-style: oblique;
+    font-size: 120%
+}
+
+.text-subtitle {
+    color: dimgrey;
+    font-style:italic;
+    font-size: 75%;
+}

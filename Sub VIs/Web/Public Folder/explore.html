@@ -60,28 +60,21 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Reverb</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">System Overview</a>
                         </h4>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse in">
                         <div class="panel-body">
-                            <p>Reverberation--or Reverb--is created when a sound or signal is reflected causing a large number of reflections to build up and then decay as the sound is absorbed by the surfaces of objects in the space. We can digitally create this effect by convoluting the impulse response of a room with our audio signal.</p>
-                            	    <div id="impulse_chart"></div>
-                                    <audio controls>
-                                      <source src="assets/audio%20waves/factory.wav" type="audio/wav">
-                                    Your browser does not support the audio element.
-                                    </audio>
-                                    <div id="sample_chart"></div>
-                                    <audio controls>
-                                      <source src="assets/audio%20waves/drums.wav" type="audio/wav">
-                                    Your browser does not support the audio element.
-                                    </audio>
-                                    <div id="output_chart"></div>
-                                    <audio controls>
-                                      <source src="assets/audio%20waves/output.wav" type="audio/wav">
-                                    Your browser does not support the audio element.
-                                    </audio>
-
+                            <p>Our application leverages the power and flexibility of the myRIO’s ARM® Cortex™-A9 real-time processing and Xilinx FPGA customizable I/O to create a device that provides the functionality of a four-track recorder with some unique add-ons. With our application, we are able to:</p>
+                            
+                            <div class="textlist">
+                                <p>•Perform real-time DSP by leveraging the FPGA for our audio acquisition, processing and playback.</p>
+                                <p>•Quickly stream binary data to and from disc on the real-time host.</p>
+                                <p>•Synthesize waveforms on the real-time host, pass them to the FPGA for processing, and then return them to the host for recording and playback.</p>
+                                <p>•Communicate over a 3rd party protocol (MIDI) quickly and efficiently by implementing our driver on the FPGA.</p>
+                                <p>•Leverage the myRIO’s web server to host a thin client—or custom web page—that allows the user to monitor the system.</p>
+                            </div>
+                            <p>With the myRIO’s wide feature set, flexibility, and power—developing a full-featured embedded system is within the reach of students and professional engineers alike.</p>
 
                         </div>
                     </div>
@@ -89,24 +82,97 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Envelope Filter</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Digital Signal Processing</a>
                         </h4>
                     </div>
                     <div id="collapseTwo" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>An envelope filter provides dynamics to our instrument to simulate the sound of a real instrument. We are able to independently control the attack, delay, sustain, and release of a note.</p>
+                            <p>Using the myRIO’s FPGA, we are able to implement our digital signal processing in hardware rather than software. This gives us increased speed and performance over a real-time implementation.</p>
+                            <div class="text-subheader">Combining Signals</div>
+                            <p>Our data for each channel comes from the Real-Time host through a DMA FIFO in the form of an unsigned 64-bit number. We then split that 64-bit number in to 4 equal parts, each representing a track of audio. We then add each split part together on the FPGA to create a composite signal.</p>
+                            <img src="assets/images/split%20and%20add%20on%20FPGA.png">
+                            <div class=text-subtitle>Dividing and summing a packed audio signal</div>
+                            <div class="text-subheader">Envelope Filter</div>
+                            <div class="text-subheader">Echo</div>
+
                         </div>
                     </div>
                 </div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Another Effect</a>
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">FPGA Audio Playback and Recording</a>
                         </h4>
                     </div>
                     <div id="collapseThree" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>Effect Description goes here.</p>
+                            <p>Using the myRIO’s on-board Audio I/O, we are able to capture and play back audio at rates in excess of CD-quality, or 44101 samples per second. As you can see from the code below, using LabVIEW FPGA makes creating and using DMA FIFOs for streaming to and from the host trivial in comparison to traditional implementation methods.</p>
+                            <img width=100% src="assets/images/FPGA%20Audio%20Read%20and%20Write.png">
+                            <div class="text-subtitle">FPGA Audio Read and Write Implementation</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Streaming from TDMS</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>TDMS—or the Technical Data Management System format—has many advantages. It’s exchangeable, compact, searchable, capable of high-speed streaming, and allows for random access. By leveraging TDMS, we are able to quickly read and write data to the myRIO’s internal storage.</p>
+                            <img width=100% src="assets/images/Write%20to%20TDMS%20File.png">
+                            <div class="text-subtitle">Write To TDMS File</div>
+                            <p></p>
+                            <img width=100% src="assets/images/Read%20From%20TDMS%20File.png">
+                            <div class="text-subtitle">Read From TDMS File</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">MIDI Communication and Control</a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>MIDI—or the Musical Instrument Digital Interface—is a 3rd party communication protocol that allows a wide variety of electronic musical devices to interface with each other. By creating a MIDI driver for the myRIO, we are able to use a wide variety of 3rd party devices to control our application.</p>
+                                <p>The baud rate of MIDI communication is 31250 bits per second. This is a non-standard baud rate, so a custom driver implementation was necessary. We began with our FPGA implementation, where we were able to implement our desired baud rate using the LabVIEW FPGA timing Vis to synchronize reading the MIDI input. We then use a DMA FIFO to pass each byte up the the real-time host where it is used to control our application.
+</p>
+                            <img width=100% src="assets/images/FPGA%20MIDI%20Read.png">
+                            <div class="text-subtitle">FPGA implementation of reading MIDI data</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Real-Time Host</a>
+                        </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>The Real-Time host application handles:</p>
+                            <div class="textlist">
+                                <p>•Resetting the state of the device on startup, initializing the file I/O and FPGA</p>
+                                <p>•The application logic for the fourtrack</p>
+                                <p>•Getting MIDI commands from the FPGA</p>
+                                <p>•Displaying a metronome using the lights on the myRIO</p>
+                                <p>•Cleaning up and shutting down our application.</p>
+                            </div>
+                            <img width=50% src="assets/images/Real-Time%20Host.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Thin Client</a>
+                        </h4>
+                    </div>
+                    <div id="collapseSeven" class="panel-collapse collapse">
+                        <div class="panel-body">
                         </div>
                     </div>
                 </div>
