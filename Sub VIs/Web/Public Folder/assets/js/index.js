@@ -1,4 +1,5 @@
 /*global $, console, google, d3 */
+
 var drawVolume = function (div, volume) {
     "use strict";
     var rect = div.selectAll("rect").data(volume);
@@ -114,7 +115,5 @@ $(document).ready(function () {
     $("svg").height($(window).height() * 0.8);
     plot();
     setInterval(update, 100);
-
-
 });
 

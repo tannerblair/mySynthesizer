@@ -95,13 +95,14 @@
                             <div class="text-subheader">Envelope Filter</div>
                             <p>To generate more natural keyboard sounds, we implemented an Envelope filter. This filter has six parameters that modify the amplitude of our input signal, in this case a sine wave:</p>
                             <div class="textlist">
-                                <p><b>Attack</b>- Given in milliseconds, this determines the amount of time it takes for the signal to go from completely off to our maximum amplitude.</p>
-                            <p><b>Attack %</b>- The maximum amplitude that the attack phase will reach.</p>
-                                <p><b>Decay</b>- The amount of time it takes for our signal to transition from the peak of the attack phase to the beginning of the sustain phase. This stage works in tandem with the attack phase to simulate the percussive loudness that comes with applying force to a traditional instrument.</p>
-                                <p><b>Sustain</b>- The length of time to hold the tone at a constant amplitude.</p>
-                                <p><b>Sustain %</b>- The level that the sustain phase will hold the note.</p>
-                                <p><b>Release</b>- At the completion of the sustain phase, the filter then returns to 0 amplitude in the timeframe specified by this parameter.</p>
+                                <p><b>•Attack</b>- Given in milliseconds, this determines the amount of time it takes for the signal to go from completely off to our maximum amplitude.</p>
+                            <p><b>•Attack %</b>- The maximum amplitude that the attack phase will reach.</p>
+                                <p><b>•Decay</b>- The amount of time it takes for our signal to transition from the peak of the attack phase to the beginning of the sustain phase. This stage works in tandem with the attack phase to simulate the percussive loudness that comes with applying force to a traditional instrument.</p>
+                                <p><b>•Sustain</b>- The length of time to hold the tone at a constant amplitude.</p>
+                                <p><b>•Sustain %</b>- The level that the sustain phase will hold the note.</p>
+                                <p><b>•Release</b>- At the completion of the sustain phase, the filter then returns to 0 amplitude in the timeframe specified by this parameter.</p>
                             <img width=100% src="assets/images/adsr.gif"></div>
+                            <p></p>
                             <div class="text-subheader">Echo</div>
                             <p>To create an echo effect, we store approximately 100 ms of the audio being written out to the FPGA. We can then recall samples from that block memory to be summed in to our output at a later time.</p>
                             <img width=100% src="assets/images/Delay.png">
@@ -168,7 +169,6 @@
                                 <p>•Resetting the state of the device on startup, initializing the file I/O and FPGA</p>
                                 <p>•The application logic for the fourtrack</p>
                                 <p>•Getting MIDI commands from the FPGA</p>
-                                <p>•Displaying a metronome using the lights on the myRIO</p>
                                 <p>•Cleaning up and shutting down our application.</p>
                             </div>
                             <img width=50% src="assets/images/Real-Time%20Host.png">
@@ -183,7 +183,7 @@
                     </div>
                     <div id="collapseSeven" class="panel-collapse collapse">
                         <div class="panel-body">
-                            <p>The myRIO--like virtually all of National Instruments' embedded products--is capable of acting as a web server and can serve up </p>
+                            <p>The myRIO--like virtually all of National Instruments' embedded products--is capable of acting as a web server, allowing you to leverage existing web technologies to create robust interfaces for your embedded applications. This thin client was created using LabVIEW Web Services, HTML5, and JavaScript. </p>
                         </div>
                     </div>
                 </div>
