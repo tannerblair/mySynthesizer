@@ -106,8 +106,15 @@ var update = function () {
 
 $(document).ready(function () {
     "use strict";
+
+    $('#loadBlankBtn').on("click", function () {$.getJSON("loadFile?fn="); });
+    $('#loadDrumsBtn').on("click", function () {$.getJSON("loadFile?fn=drums1"); });
+    $('#loadUserBtn').on("click", function () {$.getJSON("loadFile?fn=user1"); });
+    $('#saveUserBtn').on("click", function () {$.getJSON("saveFile?fn=user1"); });
     $("svg").height($(window).height() * 0.8);
     plot();
     setInterval(update, 100);
+
+
 });
 
