@@ -1,0 +1,7 @@
+Place the audio files for the drums and the user audio in the following directory on the myRIO:
+/C/ni-rt/startup
+
+Deploy the code to the myRIO
+Right-click the web service and click "Start"
+Open a browser on the host PC and navigate to 172.22.11.2:8001/web
+
