@@ -1,6 +1,19 @@
+TO CONFIGURE THE DEMO FOR FIRST RUN:
 Place the audio files for the drums and the user audio in the following directory on the myRIO:
-/C/ni-rt/startup
+* Open MAX and find the myRIO under "Remote Systems"
+* Right-click on the device and select "Web Configuration"
+* In the web configuration, select "login". 
+	-For the myRIO that ships with the demo the user name and password are both "admin".
+	-If this is a new myRIO:
+		* Under the "Security Configuration" tab, create a new user. 
+		  Despite the fact that it will let you create an account with no password, you need to create a password.
+		* Log in to the device.
+* On the "Remote File Browser" tab, navigate to the following location:
+	/C/ni-rt/startup
+* Upload the audio files.
 
+
+TO RUN THE DEMO:
 Deploy the code to the myRIO
 Right-click the web service and click "Start"
 Open a browser on the host PC and navigate to 172.22.11.2:8001/web
